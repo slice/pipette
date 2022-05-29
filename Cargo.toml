@@ -1,0 +1,13 @@
+[package]
+name = "pipette"
+version = "0.1.0"
+edition = "2021"
+authors = ["Skip R. <tinyslices@gmail.com>"]
+description = "Anki deck web visualization tool"
+
+[dependencies]
+anyhow = "1.0.53"
+rusqlite = "0.26.3"
+num-format = "0.4.0"
+chrono = "0.4"
+clap = { version = "3.1.18", features = ["derive"] }

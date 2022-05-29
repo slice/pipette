@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>skippy's core2300 progress</title>
+    <!-- quack >o_/ -->
+    <style>
+      :root {
+        font-family: ui-sans-serif, system-ui, sans-serif;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      a {
+        color: palevioletred;
+        text-decoration-style: dotted;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      body {
+        margin: 2rem;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      .grand-total {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .grand-total small {
+        font-weight: normal;
+      }
+
+      .cards,
+      h1 {
+        margin: 1rem 0;
+      }
+
+      .cards {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .card {
+        font-family: ui-serif, serif;
+        padding: 0.25em 0.5em;
+        margin: 0 0.5rem 0.5rem 0;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .card-new {
+        background: hsl(0 0% 93%);
+      }
+
+      .card-review {
+        background: hsl(170deg 100% 90%);
+      }
+
+      .card-learning {
+        background: hsl(300deg 100% 90%);
+      }
+
+      .color {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+      }
+
+      .legend-item:not(:last-of-type) {
+        margin-right: 0.25rem;
+      }
+
+      .card-hover {
+        display: none;
+      }
+
+      .card:hover .card-hover {
+        position: absolute;
+        display: block;
+        width: 150px;
+        z-index: 100;
+        background: #fff;
+        border: solid 1px #888;
+        padding: 0.5rem;
+        pointer-events: none;
+      }
+
+      .card-link {
+        color: inherit;
+        text-decoration: inherit;
+      }
+
+      .card-link:hover {
+        text-decoration: inherit;
+      }
+
+      .card-meaning {
+        margin-bottom: 1em;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      skippy (スキッピー)&rsquo;s
+      <a href="https://anacreondjt.gitlab.io/docs/coredeck/">core2.3k v3</a>
+      memorization progress
+    </h1>
+    <div class="grand-total">
+      <small>learned:</small> {n_learned}/{n_cards}
+      <span class="percentage">({learned_percentage_pretty}%)</span>
+    </div>
+    <small>since 2022-02-02; last updated {now}</small>
+    <p>
+      legend:
+      <span class="legend-item"><span class="color card-new"></span> new</span>
+      <span class="legend-item"
+        ><span class="color card-learning"></span> learning</span
+      >
+      <span class="legend-item"
+        ><span class="color card-review"></span> review</span
+      >
+    </p>
+
+    <div class="cards">{cards}</div>
+  </body>
+</html>
